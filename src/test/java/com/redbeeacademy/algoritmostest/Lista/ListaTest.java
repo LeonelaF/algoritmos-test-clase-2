@@ -3,6 +3,7 @@ package com.redbeeacademy.algoritmostest.Lista;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -31,7 +32,7 @@ class ListaTest {
     public void testHappyPathSwap() {
         List<Integer> result = Lista.intercambiar(List.of(1, 5, 6, 7, 3, 2));
         assertNotNull(result, "The result cannot be null");
-        assertEquals(List.of(1, 5, 3, 7, 6, 2), result);
+        assertEquals(Arrays.asList(1, 5, 3, 7, 6, 2), result);
     }
 
     @Test
@@ -39,7 +40,7 @@ class ListaTest {
     public void testNullValuesSwap() {
         List<Integer> result = Lista.intercambiar(List.of(1, 5, 6, 7, null, 2));
         assertNotNull(result, "The result cannot be null");
-        assertEquals(List.of(1, 5, 2, 7, 6), result);
+        assertEquals(Arrays.asList(1, 5, 2, 7, 6), result);
     }
 
     @Test

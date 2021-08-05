@@ -26,13 +26,20 @@ public class Cine {
 
     public static double cantidadTotalRecaudada(List<Persona> personas){
         double cantidadTotal = 0;
-        //TODO -> implement me
+        for(Persona persona:personas){
+            if (persona.getEdad()>=5 && persona.getEdad()<=10){
+                cantidadTotal=cantidadTotal+100;
+            }else if(persona.getEdad()>=11 && persona.getEdad()<=17){
+                cantidadTotal=cantidadTotal+150;
+            }else{
+                cantidadTotal=cantidadTotal+200;
+            }
+        }
         return cantidadTotal;
     }
 
     public static Integer cantidadPersonas(List<Persona> personas){
-        Integer cantidadPersonas = 0;
-        //TODO -> implement me
+        Integer cantidadPersonas = personas.size();
         return cantidadPersonas;
     }
 

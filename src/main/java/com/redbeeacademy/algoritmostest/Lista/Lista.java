@@ -9,38 +9,83 @@ Realizar los siguientes métodos:
 6) Dadas dos listas, crear una nueva con los elementos que se repitan en ambas
  */
 
+import java.util.ArrayList;
 import java.util.List;
+
 
 public class Lista {
 
     public static List<Integer> guardarEnLista(Integer numero){
-        //TODO -> implement me
-        return null;
+       List<Integer> nueva= new ArrayList<>();
+       if(numero!=null){
+           nueva.add(numero);
+       }
+        return nueva;
     }
 
     public static List<Integer> intercambiar(List<Integer> lista){
-        //TODO -> implement me
-        return null;
+        List<Integer> nueva= new ArrayList<>();
+        for (int i=0;i<lista.size();i++){
+            if(i==2){
+                nueva.add(lista.get(4));
+            } else if(i==4){
+                nueva.add(lista.get(2));
+            }else{
+                nueva.add(lista.get(i));
+            }
+        }
+        return nueva;
     }
 
     public static List<Integer> agregarElementoAlInicio(List<Integer> lista, Integer numero){
-        //TODO -> implement me
-        return null;
+        List<Integer> nueva= new ArrayList<>();
+        if(numero!=null){
+            nueva.add(numero);
+        }
+        for (int i=0; i<lista.size();i++){
+            nueva.add(lista.get(i));
+        }
+        return nueva;
     }
 
-    public static Double promedioLista(List<Integer> lista){
-        //TODO -> implement me
-        return null;
+    public static Double promedioLista(List<Integer> lista) {
+        Double prom = 0.0;
+        if (lista != null) {
+            for (int i = 0; i < lista.size(); i++) {
+                prom = prom + lista.get(i);
+            }
+            prom = prom / lista.size();
+        }
+        return prom;
     }
 
     public static List<Integer> eliminarMaximo(List<Integer> lista){
-        //TODO -> implement me
-        return null;
+        //fixme
+        Integer max=lista.get(0);
+        Integer pos=0;
+        List<Integer> nueva= new ArrayList<>();
+        for (int i=0; i<lista.size();i++){
+            if(lista.get(i)>max){
+                max=lista.get(i);
+            }else{
+                nueva.add(lista.get(i));
+            }
+        }
+        nueva=lista;
+        return nueva;
     }
 
-    public static List<Integer> repetidos(List<Integer> a, List<Integer> b){
-        //TODO -> implement me
-        return null;
+    public static List<Integer> repetidos(List<Integer> a, List<Integer> b) {
+        List<Integer> c = new ArrayList<>();
+        if (a != null && b != null) {
+            for (int i = 0; i < a.size(); i++) {
+                for (int j = 0; j < b.size(); j++) {
+                    if (a.get(i) == b.get(j)) {
+                        c.add(a.get(i));
+                    }
+                }
+            }
+        }
+        return c;
     }
-
 }
